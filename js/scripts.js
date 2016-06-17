@@ -1,5 +1,3 @@
-var pizzaOrder;
-
 function Pizza (size) {
   this.size = size;
   this.toppings = [];
@@ -24,9 +22,9 @@ Pizza.prototype.toppingPrice = function (pizzaOrder) {
   return this.totalPrice;
 };
 
-Pizza.prototype.list = function(pizzaOrder) {
-  var toppingString = pizzaOrder.toppings.toString()
-  return toppingString;
+Pizza.prototype.list = function(x) {
+x = this.toppings.join(", ")
+  return x;
   }
 
 $(document).ready(function(){
@@ -36,7 +34,11 @@ $(document).ready(function(){
                               '<select class="form-control topping-choice" id="topping-choice" name="">' +
                                 '<option value="pepperoni">Pepperoni</option>' +
                                 '<option value="artichoke">Artichoke</option>' +
-                                '<option value="anchovy">Anchovy</option>'
+                                '<option value="sausage">Sausage</option>' +
+                                '<option value="cheese">Extra Cheese</option>' +
+                                '<option value="onions">Onions</option>' +
+                                '<option value="peppers">Green Peppers</option>' +
+                                '<option value="mushrooms">Mushrooms</option>'
                                 + '</select>'
                                 + '</div>')
   });
@@ -46,6 +48,7 @@ $(document).ready(function(){
     var pizzaName = $("input#pizza-name").val();
     var sizeSelect = $("select#pizza-size").val();
     var pizzaOrder = new Pizza (sizeSelect);
+    $("#output").show();
     $("ul#pizzas").append("<li><span class='pizza'>" + pizzaName+ "</span></li>");
 
     $(".new-topping").each(function() {
@@ -53,16 +56,19 @@ $(document).ready(function(){
       pizzaOrder.toppings.push(toppingSelect)
     });
 
-    pizzaOrder.sizePrice();
-    pizzaOrder.toppingPrice(pizzaOrder);
-
     $(".pizza").last().click(function() {
-      var pizzaString = pizzaOrder.list(",");
+      pizzaOrder.sizePrice();
+      pizzaOrder.toppingPrice(pizzaOrder);
+      var list = pizzaOrder.list();
       $("#show-order").show();
       $("#show-order h2").text(pizzaName);
       $(".pizza-size").text(pizzaOrder.size);
-      $(".pizza-topping").text(pizzaOrder.toppings.toString());
+      $(".pizza-toppings").text(list);
       $(".total-cost").text("$" + pizzaOrder.totalPrice);
+    });
+
+    $("#confirmOrder").last().click(function() {
+      alert("Thanks for your purchase! Your order is on its way!");
     });
   });
 });

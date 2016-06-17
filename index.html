@@ -35,16 +35,19 @@
     <div class="container-fluid text-center">
       <div class="row content">
         <div class="col-sm-2 sidenav">
-          <p><a href="#">Link1</a></p>
-          <p><a href="#">Link2</a></p>
-          <p><a href="#">Link3</a></p>
+          <p><a href="#">Pizza of the Month</a></p>
+          <p><a href="#">Locations</a></p>
+          <p><a href="#">Coupons</a></p>
         </div>
         <div class="col-sm-8 text-left">
-          <h1>Welcome</h1>
-          <p>Welcome to Pete's Pizza Parlor - home of the best pizza.</p>
+          <div class="welcome">
+            <h1>Hello!</h1>
+            <p>Welcome to Pete's Pizza Parlor - home of the best pizza.</p>
+          </div>
           <hr>
           <div class="well">
             <h3>Order your pizza!</h3>
+            <hr>
             <form id="orderForm">
               <div class="new-pizza">
                 <div class="form-group">
@@ -53,18 +56,22 @@
                   <div class="form-group">
                     <label for="pizza-size">Select your size:</label>
                     <select class="form-control" id="pizza-size" name="">
-                      <option value="small">Small</option>
-                      <option value="medium">Medium</option>
-                      <option value="large">Large</option>
+                      <option value="small">Small ($10)</option>
+                      <option value="medium">Medium ($15)</option>
+                      <option value="large">Large ($20)</option>
                     </select>
                   </div>
                   <div id="new-toppings">
                     <div class="new-topping form-group">
-                        <label for="topping-choice">Select your topping:</label>
+                        <label for="topping-choice">Select your topping ($5 each):</label>
                         <select class="form-control topping-choice" id="topping-choice" name="">
                           <option value="pepperoni">Pepperoni</option>
                           <option value="artichoke">Artichoke</option>
-                          <option value="anchovy">Anchovy</option>
+                          <option value="sausage">Sausage</option>
+                          <option value="cheese">Extra Cheese</option>
+                          <option value="onions">Onions</option>
+                          <option value="peppers">Green Peppers</option>
+                          <option value="mushrooms">Mushrooms</option>
                         </select>
                     </div>
                   </div>
@@ -75,11 +82,12 @@
               </div>
               <div class="form-group">
                 <button class="btn btn-primary" type="button" name="button" id="add-pizza">Add a pizza to your order</button>
-                <button class="btn btn-success" type="submit" name="button" id="confirmOrder">Submit Order</button>
+                <button class="btn btn-success" type="submit" name="button" id="submitOrder">Submit Order</button>
               </div>
             </form>
           </div>
-          <div class="" id="output">
+          <div id="output">
+            <p>Your Pending Orders for Review:</p>
             <ul id="pizzas">
 
             </ul>
@@ -87,23 +95,26 @@
           <div id="show-order">
             <h2></h2>
             <p>Size: <span class="pizza-size"></span></p>
-            <p>Toppings: <span class="last-name"></span></p>
+            <p>Toppings: <span class="pizza-toppings"></span></p>
             <p>Cost: <span class="total-cost"></span></p>
-            <button type="button" class="btn btn-danger" name="button">Confirm Order</button>
+            <button type="button" id="confirmOrder" class="btn btn-danger" name="button">Confirm Order</button>
           </div>
         </div>
         <div class="col-sm-2 sidenav">
-          <div class="well">
-            <p>ADS</p>
+          <p>Our Best Sellers</p>
+          <div class="well bestseller">
+          <p>Pepperoni</p>
+          <img src="img/pizza.png" class="img-responsive" alt="pizza" />
           </div>
-          <div class="well">
-            <p>ADS</p>
+          <div class="well bestseller">
+          <p>Sausage</p>
+          <img src="img/sausage.png" class="img-responsive" alt="pizza" />
           </div>
         </div>
       </div>
     </div>
 
-    <footer class="container-fluid text-center navbar-fixed-bottom">
+    <footer class="container-fluid text-right navbar-fixed-bottom">
       <p>&copy;	Pete's Pizza</p>
     </footer>
 
