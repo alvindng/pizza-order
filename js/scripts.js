@@ -30,7 +30,7 @@ x = this.toppings.join(", ")
 $(document).ready(function(){
   $("#add-topping").click(function() {
     $("#new-toppings").append('<div class="new-topping form-group">' +
-                              '<label for="topping-choice">Select your topping:</label>' +
+                              '<label for="topping-choice">Select your additional topping:</label>' +
                               '<select class="form-control topping-choice" id="topping-choice" name="">' +
                                 '<option value="pepperoni">Pepperoni</option>' +
                                 '<option value="artichoke">Artichoke</option>' +

@@ -16,9 +16,6 @@ Pizza Parlor is a web application that allows a user to select a pizza size, and
 * User selects their toppings
   * Example Input: [pepperoni, sausage]	  
   * Example Output: 'pepperoni','sausage'
-* Numbers divisible by 5 become 'pong'
-  * Example Input: 5
-  * Example Output: pong
 * User can submit their order for review size, toppings, and price
   * Example Input: click "submit order"
   * Example Output: [small, 'pepperoni','sausage', $20]
