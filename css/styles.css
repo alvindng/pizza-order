@@ -21,6 +21,7 @@ footer {
   background-color: #555;
   color: white;
   padding: 10px;
+  margin-bottom: 50px;
 }
 
 /* On small screens, set height to 'auto' for sidenav and grid */
@@ -30,4 +31,17 @@ footer {
     padding: 15px;
   }
   .row.content {height:auto;}
+}
+
+.pizza {
+  cursor: pointer;
+  color: #0088cc;
+}
+
+.pizza:hover {
+  text-decoration: underline;
+}
+
+#show-order {
+  display: none;
 }

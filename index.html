@@ -46,21 +46,27 @@
           <div class="well">
             <h3>Order your pizza!</h3>
             <form id="orderForm">
-              <div class="form-group">
-                <label for="pizza-size">Select your size:</label>
-                <select class="form-control" id="pizza-size" name="">
-                  <option value="small">Small</option>
-                  <option value="medium">Medium</option>
-                  <option value="large">Large</option>
-                </select>
-                <div id="new-toppings">
-                  <div class="new-topping form-group">
-                      <label for="topping-choice">Select your topping:</label>
-                      <select class="form-control" id="topping-choice" name="">
-                        <option value="pepperoni">Pepperoni</option>
-                        <option value="artichoke">Artichoke</option>
-                        <option value="anchovy">Anchovy</option>
-                      </select>
+              <div class="new-pizza">
+                <div class="form-group">
+                  <label for="pizza-name">Name your pizza:</label>
+                  <input type="text" name="name" value="" id="pizza-name">
+                  <div class="form-group">
+                    <label for="pizza-size">Select your size:</label>
+                    <select class="form-control" id="pizza-size" name="">
+                      <option value="small">Small</option>
+                      <option value="medium">Medium</option>
+                      <option value="large">Large</option>
+                    </select>
+                  </div>
+                  <div id="new-toppings">
+                    <div class="new-topping form-group">
+                        <label for="topping-choice">Select your topping:</label>
+                        <select class="form-control" id="topping-choice" name="">
+                          <option value="pepperoni">Pepperoni</option>
+                          <option value="artichoke">Artichoke</option>
+                          <option value="anchovy">Anchovy</option>
+                        </select>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -74,9 +80,17 @@
             </form>
           </div>
           <div class="" id="output">
-            <div id="orderConfirmation">
+            <ul id="pizzas">
 
-            </div>
+            </ul>
+          </div>
+          <div id="show-order">
+            <h2></h2>
+            <p>Size: <span class="pizza-size"></span></p>
+            <p>Toppings: <span class="last-name"></span></p>
+            <p>Addresses:</p>
+            <ul id="addresses">
+            </ul>
           </div>
         </div>
         <div class="col-sm-2 sidenav">
@@ -90,7 +104,7 @@
       </div>
     </div>
 
-    <footer class="footer container-fluid text-center navbar navbar-fixed-bottom">
+    <footer class="container-fluid text-center navbar-fixed-bottom">
       <p>&copy;	Pete's Pizza</p>
     </footer>
 

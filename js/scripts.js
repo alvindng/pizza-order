@@ -2,6 +2,8 @@ function Pizza (size,topping) {
   this.size = size;
   this.topping = topping;
 };
+
+
 //
 // Pizza.prototype.topping = function () {
 //   return this.topping
@@ -10,13 +12,6 @@ function Pizza (size,topping) {
 // function Topping (pepperoni, artichoke, anchovy){
 //
 // }
-
-// function Size (small, medium, large){
-//   this.small = small;
-//   this.medium = medium;
-//   this.large = large;
-// }()
-
 
 $(document).ready(function(){
   $("#add-topping").click(function() {
@@ -29,12 +24,29 @@ $(document).ready(function(){
                                 + '</select>'
                                 + '</div>')
   });
+
   $("form#orderForm").submit(function(event) {
     event.preventDefault();
+    var pizzaName = $("input#pizza-name").val();
     var sizeSelect = $("select#pizza-size").val();
     var toppingSelect = $("select#topping-choice").val();
     var pizzaOrder = new Pizza (sizeSelect,toppingSelect);
+    $("ul#pizzas").append("<li><span class='pizza'>" + pizzaName+ "</span></li>");
 
-
+    $(".pizza").last().click(function() {
+      $("#show-order").show();
+      $("#show-order h2").text(pizzaName);
+      $(".pizza-size").text(pizzaOrder.size);
+      $(".pizza-topping").text(pizzaOrder.topping);
+      // $("ul#addresses").text("");
+      // newContact.addresses.forEach(function(address) {
+      //   $("ul#addresses").append("<li>" + address.fullAddress() + "</li>");
+      });
   });
+
+
+
+
+
+
 });
