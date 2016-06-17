@@ -1,40 +1,45 @@
-# _Pizza Order_
+# _Pizza Parlor_
 
-#### June 17, 2016
+#### _Individual Coding Practice for Epicodus Week 4, 6.17.16_
 
-#### By _Alvin Ng_
+#### By _**Alvin Ng**_
 
 ## Description
+**Pizza Parlor**
 
-_Generic to-do list for tasks. User can add anything as input text, _
-_A list of tasks generates from user input. An option to indicate tasks as done exists, and when selected will remove the task from the to-do list._
+Pizza Parlor is a web application that allows a user to select a pizza size, and a range of toppings to be added to an order.
 
 ## Specifications
+* User selects a pizza size
+  * Example Input: [small]
+  * Example Output: 'small'
+* User selects their toppings
+  * Example Input: [pepperoni, sausage]	  
+  * Example Output: 'pepperoni','sausage'
+* Numbers divisible by 5 become 'pong'
+  * Example Input: 5
+  * Example Output: pong
+* User can submit their order for review size, toppings, and price
+  * Example Input: click "submit order"
+  * Example Output: [small, 'pepperoni','sausage', $20]
+* User confirms order for purchase
+  * Example Input: click "confirm order"
+  * Example Output: "Thanks for your purchase!"
 
-* _Select the name of a movie from a preset list, the time of day and their age._
-  * **Example Input:** types "buy groceries" into field, clicks Add Button
-  * **Example Output:** list entry for "buy groceries" appears
+## Setup/Installation Requirements
 
-* _Display movie ticket cost based on the form fields._
-  * **Example Input:** user adds items to list, as above
-  * **Example Output:** list reads: "item1, item2, item3, etc"
+* Download/clone repository, or visit https://github.com/alvindng/pizza-order
+* To order a pizza, enter a pizza size and your desired toppings
+* Click the _"confirm order"_ button to see your order confirmation and purchase details
 
-* _Non-first release, matinee and senior ticket discount must be applied._
-  * **Example Input:** user clicks checkbox next to todo item
-  * **Example Output:** item marked as complete
+## Support and contact details
 
-* _Validate form fields._
-  * **Example Input:** user clicks "Remove from List" box next to item
-  * **Example Output:** all items marked "done" are removed from the list
-
+Contact Alvin Ng
 
 ## Technologies Used
 
-_JavaScript, jQuery, Bootstrap_
+_HTML,CSS, javascript_
 
+### License
 
-### Legal
-
-_This software is available under the MIT license and can be modified and used for any purposes without express permission of the author._
-
-Copyright &copy; 2016 **_Alvin Ng & Chip Carnes_**
+Copyright (c) 2016
