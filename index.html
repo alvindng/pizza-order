@@ -53,12 +53,19 @@
                   <option value="medium">Medium</option>
                   <option value="large">Large</option>
                 </select>
-              <input type="checkbox" name="name" value="" id="pepperoni">
-              <label for="pepperoni">Pepperoni</label>
-              <input type="checkbox" name="name" value="" id="artichoke">
-              <label for="artichoke">Artichoke</label>
-              <input type="checkbox" name="name" value="" id="anchovy">
-              <label for="anchovy">Anchovy</label>
+                <div id="new-toppings">
+                  <div class="new-topping form-group">
+                      <label for="topping-choice">Select your topping:</label>
+                      <select class="form-control" id="topping-choice" name="">
+                        <option value="pepperoni">Pepperoni</option>
+                        <option value="artichoke">Artichoke</option>
+                        <option value="anchovy">Anchovy</option>
+                      </select>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <button class="btn btn-warning form-control" type="button" name="button" id="add-topping">Add a topping to your pizza</button>
               </div>
               <div class="form-group">
                 <button class="btn btn-primary" type="button" name="button" id="add-pizza">Add a pizza to your order</button>
@@ -67,7 +74,9 @@
             </form>
           </div>
           <div class="" id="output">
+            <div id="orderConfirmation">
 
+            </div>
           </div>
         </div>
         <div class="col-sm-2 sidenav">
