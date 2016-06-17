@@ -1,23 +1,39 @@
-function Pizza (size,topping) {
+var pizzaOrder;
+
+function Pizza (size) {
   this.size = size;
-  this.topping = topping;
+  this.toppings = [];
+  this.totalPrice = 0;
 };
 
+Pizza.prototype.sizePrice = function () {
+  if (this.size === "small" ) {
+    this.totalPrice += 10
+  } else if (this.size === "medium") {
+    this.totalPrice += 15
+  } else {
+    this.totalPrice += 20
+  }
+  return this.totalPrice;
+};
 
-//
-// Pizza.prototype.topping = function () {
-//   return this.topping
-// }
+Pizza.prototype.toppingPrice = function (pizzaOrder) {
+  pizzaOrder.toppings.forEach(function(topping){
+    pizzaOrder.totalPrice+=5;
+  })
+  return this.totalPrice;
+};
 
-// function Topping (pepperoni, artichoke, anchovy){
-//
-// }
+Pizza.prototype.list = function(pizzaOrder) {
+  var toppingString = pizzaOrder.toppings.toString()
+  return toppingString;
+  }
 
 $(document).ready(function(){
   $("#add-topping").click(function() {
     $("#new-toppings").append('<div class="new-topping form-group">' +
                               '<label for="topping-choice">Select your topping:</label>' +
-                              '<select class="form-control" id="topping-choice" name="">' +
+                              '<select class="form-control topping-choice" id="topping-choice" name="">' +
                                 '<option value="pepperoni">Pepperoni</option>' +
                                 '<option value="artichoke">Artichoke</option>' +
                                 '<option value="anchovy">Anchovy</option>'
@@ -29,24 +45,24 @@ $(document).ready(function(){
     event.preventDefault();
     var pizzaName = $("input#pizza-name").val();
     var sizeSelect = $("select#pizza-size").val();
-    var toppingSelect = $("select#topping-choice").val();
-    var pizzaOrder = new Pizza (sizeSelect,toppingSelect);
+    var pizzaOrder = new Pizza (sizeSelect);
     $("ul#pizzas").append("<li><span class='pizza'>" + pizzaName+ "</span></li>");
 
+    $(".new-topping").each(function() {
+      var toppingSelect = $(this).find("select.topping-choice").val();
+      pizzaOrder.toppings.push(toppingSelect)
+    });
+
+    pizzaOrder.sizePrice();
+    pizzaOrder.toppingPrice(pizzaOrder);
+
     $(".pizza").last().click(function() {
+      var pizzaString = pizzaOrder.list(",");
       $("#show-order").show();
       $("#show-order h2").text(pizzaName);
       $(".pizza-size").text(pizzaOrder.size);
-      $(".pizza-topping").text(pizzaOrder.topping);
-      // $("ul#addresses").text("");
-      // newContact.addresses.forEach(function(address) {
-      //   $("ul#addresses").append("<li>" + address.fullAddress() + "</li>");
-      });
+      $(".pizza-topping").text(pizzaOrder.toppings.toString());
+      $(".total-cost").text("$" + pizzaOrder.totalPrice);
+    });
   });
-
-
-
-
-
-
 });
